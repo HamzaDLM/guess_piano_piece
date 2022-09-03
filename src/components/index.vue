@@ -1,11 +1,10 @@
 <template>
-  <div class="container bg-secondary m-0 p-0">
+  <div>
 
-      <div class="">
-        <h1>GUESS THE FOLLOWING CLASSICAL PIANO PIECE</h1>
-        <p>Listen to the following 15 seconds and try to guess the name</p>
-        <button type="button" class="btn btn-primary">Play</button>
-      </div>
+    <div class="container-fluid top-container bg-image m-0 p-0">
+      <h1 class="title">GUESS THE FOLLOWING CLASSICAL PIANO PIECE</h1>
+      <p class="description">Listen to the following 15 seconds and try to guess the name</p>
+      <button type="button" class="btn btn-primary">Play</button>
 
       <div class="row m-4">
         <div v-for="(data, index) in data" :key="index" class="col-sm-3">
@@ -26,8 +25,12 @@
           60%
         </div>
       </div>
-      
     </div>
+    <div class="container-fuild bot-container m-0 p-0">
+        <p>fefk</p>
+    </div>
+
+  </div>
 </template>
 
 <script>
@@ -55,9 +58,31 @@ export default {
           composer: 'Ludwig van Beethoven',
           piece: 'Für Elise'
         }
-      ]
+      ],
+      game_count: 0, // How many times user played
+      win_count: 0,
+      loss_count: 0,
     }
       
-  }
+  },
 }
 </script>
+
+<style>
+    .top-container {
+      padding-top: 60px !important;
+      height: 60vh;
+      background-image: url(@/assets/vgogh.jpg)
+    }
+    .bot-container {
+      height: 40vh;
+      background-color: #181818;
+    }
+    .title {
+      font-family: montserrat bold;
+      color: white;
+    }
+    .description {
+      color: white;
+    }
+</style>
