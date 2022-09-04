@@ -1,34 +1,49 @@
 <script>
 import PianoDB from '../backend/store'
+import utils from '../backend/utils'
 
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  },
+  name: 'pageIndex',
   data() {
     return {
+      // Stores
       db: PianoDB,
+      fourPieces: [],
+      currentPiece: null,
+      // Game stats
       game_count: 0, // How many times user played
       win_count: 0,
       loss_count: 0,
-      currentPiece: null,
+      // States
       playing: false,
       answered: false,
       answerStatus: null, // is the answer 'correct' or 'incorrect'
-      answerIndex: null,
       isSelected: [],
     } 
   },
   created() {
-    Array.prototype.sample = function(){
-      return this[Math.floor(Math.random()*this.length)];
+    this.prepGame()
+  },
+  computed: {
+    percentage() {
+      return Math.round(( this.win_count / this.game_count ) * 100)
     }
-    this.currentPiece = this.db.sample() 
-    console.log(this.currentPiece)
   },
   methods: {
+    ...utils,
+    prepGame() {
+      // pick random index
+      var randIndex = [Math.floor(Math.random() * this.db.length)]
+      // Pick
+      this.currentPiece = this.db[randIndex]
+      this.fourPieces.push(this.currentPiece)
+      // Remove
+      this.db.splice(randIndex, 1)
+      // get 3 false answers
+      this.fourPieces.push(...this.pickRandom(this.db, 3))
+    },
     togglePlay() {
+      console.log('called')
       let audio = this.$refs.audioPlayer
       if (this.playing) {
         audio.pause()
@@ -40,6 +55,7 @@ export default {
     },
     submitAnswer(params) {
       if (this.answered == false) {
+        this.game_count ++
         // Pause the audio
         let audio = this.$refs.audioPlayer
         audio.pause()
@@ -49,13 +65,23 @@ export default {
         this.isSelected.push(params.index)
         if (params.data == this.currentPiece) {
           this.answerStatus = 'correct'
+          this.win_count ++
         } else {
           this.answerStatus = 'incorrect'
+          this.loss_count ++
         }
+        this.db.push(this.currentPiece)
       }
     },
     next() {
-    },
+      this.currentPiece = null
+      this.fourPieces = []
+      this.isSelected = []
+      this.answerStatus = null
+      this.answered = false
+      this.prepGame()
+
+    }
   }
 }
 </script>
@@ -67,13 +93,13 @@ export default {
       <h1 class="title">GUESS THE FOLLOWING CLASSICAL PIANO PIECE</h1>
       <h5 class="description">Listen to the following 15 seconds and try to guess the name</h5>
 
-      <audio v-bind:src="`pieces/` + currentPiece.file_name" preload="auto" autoplay ref="audioPlayer"></audio>
+      <audio v-bind:src="`pieces/` + currentPiece.file_name" preload="auto" ref="audioPlayer"></audio>
       <button v-if="!playing && !answered" type="button" class="btn btn-primary m-2 play-button" @click="togglePlay()">Play</button>
       <button v-if="playing && !answered" type="button" class="btn btn-secondary m-2 play-button" @click="togglePlay()">Pause</button>
       <button v-if="answered" type="button" class="btn btn-warning m-2 play-button" @click="next()">Next</button>
 
       <div class="row m-4">
-        <div v-for="(data, index) in db" :key="index" class="col-sm-3">
+        <div v-for="(data, index) in fourPieces" :key="index" class="col-sm-3">
             <button 
               type="button" 
               class="btn option-button" 
@@ -93,15 +119,15 @@ export default {
     <div class="container-fuild bot-container m-0">
       <div class="row m-0 ">
         <div class="col-sm-4">
-          <p class="stats-title">238</p>
+          <p class="stats-title">{{game_count}}</p>
           <p class="stats-description">How many times you played <br/> this game</p>
         </div>
         <div class="col-sm-4">
-          <p class="stats-title">24/7</p>
+          <p class="stats-title">{{win_count}}/{{loss_count}}</p>
           <p class="stats-description">Correct / Incorrect <br/> pieces guessed</p>
         </div>
         <div class="col-sm-4">
-          <p class="stats-title">60%</p>
+          <p class="stats-title" :style="{color: perc2color(percentage)}">{{percentage}} %</p>
           <p class="stats-description">Win ratio</p>
         </div>
       </div>

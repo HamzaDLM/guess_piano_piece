@@ -1,22 +1,37 @@
 [
-    {
-      "composer": "Erik Satie",
-      "piece": "Gymnopédie No. 1",
-      "file_name": "1.mp3"
-    },
-    {
-      "composer": "Claude Debussy",
-      "piece": "Clair De Lune",
-      "file_name": "2.mp3"
-    },
-    {
-      "composer": "Ludwig Van Bethoven",
-      "piece": "Moonlight Sonata (Sonate No. 14, 1st Movement)",
-      "file_name": "3.mp3"
-    },
-    {
-      "composer": "Frédéric Chopin",
-      "piece": "Nocturne in D Flat Major Op. 27 No. 2",
-      "file_name": "4.mp3"
-    }
+  {
+    "composer": "Wolfgang Amadeus Mozart",
+    "piece": "Piano Sonata in B-flat major, III. Allegretto Grazioso",
+    "file_name": "0.mp3"
+  },
+  {
+    "composer": "Erik Satie",
+    "piece": "Gymnopédie No. 1",
+    "file_name": "1.mp3"
+  },
+  {
+    "composer": "Claude Debussy",
+    "piece": "Clair De Lune",
+    "file_name": "2.mp3"
+  },
+  {
+    "composer": "Ludwig Van Bethoven",
+    "piece": "Moonlight Sonata (Sonate No. 14, 1st Movement)",
+    "file_name": "3.mp3"
+  },
+  {
+    "composer": "Frédéric Chopin",
+    "piece": "Nocturne in D Flat Major Op. 27 No. 2",
+    "file_name": "4.mp3"
+  },
+  {
+    "composer": "Ludwig van Beethoven",
+    "piece": "Für Elise",
+    "file_name": "5.mp3"
+  },
+  {
+    "composer": "Frédéric Chopin",
+    "piece": "Nocturne in B Flat Minor Op. 9 No. 1",
+    "file_name": "6.mp3"
+  }
 ]
