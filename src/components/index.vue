@@ -91,7 +91,7 @@ export default {
 
     <div class="container-fluid top-container bg-image">
       <h1 class="title">GUESS THE FOLLOWING CLASSICAL PIANO PIECE</h1>
-      <h5 class="description">Listen to the following 15 seconds and try to guess the name</h5>
+      <h5 class="description">Listen to the following classical piano piece and try to guess the answer out of the four given.</h5>
 
       <audio v-bind:src="`pieces/` + currentPiece.file_name" preload="auto" ref="audioPlayer"></audio>
       <button v-if="!playing && !answered" type="button" class="btn btn-primary m-2 play-button" @click="togglePlay()">Play</button>
