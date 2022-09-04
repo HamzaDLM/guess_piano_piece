@@ -13,13 +13,20 @@ export default {
       // Game stats
       game_count: 0, // How many times user played
       win_count: 0,
-      loss_count: 0,
       // States
       playing: false,
       answered: false,
       answerStatus: null, // is the answer 'correct' or 'incorrect'
       isSelected: [],
     } 
+  },
+  mounted() {
+    if (localStorage.game_count) {
+      this.game_count = localStorage.game_count
+    }
+    if (localStorage.win_count) {
+      this.win_count = localStorage.win_count
+    }
   },
   created() {
     this.prepGame()
@@ -68,9 +75,11 @@ export default {
           this.win_count ++
         } else {
           this.answerStatus = 'incorrect'
-          this.loss_count ++
         }
         this.db.push(this.currentPiece)
+        // set localstorage
+        localStorage.win_count = this.win_count
+        localStorage.game_count = this.game_count
       }
     },
     next() {
@@ -123,7 +132,7 @@ export default {
           <p class="stats-description">How many times you played <br/> this game</p>
         </div>
         <div class="col-sm-4">
-          <p class="stats-title">{{win_count}}/{{loss_count}}</p>
+          <p class="stats-title">{{win_count}}/{{game_count - win_count}}</p>
           <p class="stats-description">Correct / Incorrect <br/> pieces guessed</p>
         </div>
         <div class="col-sm-4">
