@@ -16,6 +16,14 @@
     src: url("../fonts/Montserrat-Regular.otf")
 }
 
+.stats-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.stats-description {
+    font-size: 0.9em;
+}
+
 .play-button {
     width: 15em;
     height: 3em;
@@ -34,6 +42,7 @@
 }
 
 .bot-container {
+    padding: 9%;
     height: 35vh;
     background-color: #181818;
 }

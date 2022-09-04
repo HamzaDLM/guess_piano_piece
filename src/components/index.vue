@@ -70,7 +70,7 @@ export default {
       <audio v-bind:src="`pieces/` + currentPiece.file_name" preload="auto" autoplay ref="audioPlayer"></audio>
       <button v-if="!playing && !answered" type="button" class="btn btn-primary m-2 play-button" @click="togglePlay()">Play</button>
       <button v-if="playing && !answered" type="button" class="btn btn-secondary m-2 play-button" @click="togglePlay()">Pause</button>
-      <button v-if="answered" type="button" class="btn btn-primary m-2 play-button" @click="next()">Next</button>
+      <button v-if="answered" type="button" class="btn btn-warning m-2 play-button" @click="next()">Next</button>
 
       <div class="row m-4">
         <div v-for="(data, index) in db" :key="index" class="col-sm-3">
@@ -90,30 +90,30 @@ export default {
       </div>
 
     </div>
-    <div class="container-fuild bot-container m-0 p-0">
-      <div class="row m-0">
+    <div class="container-fuild bot-container m-0">
+      <div class="row m-0 ">
         <div class="col-sm-4">
-          238
-          <p>fezfezfz</p>
+          <p class="stats-title">238</p>
+          <p class="stats-description">How many times you played <br/> this game</p>
         </div>
         <div class="col-sm-4">
-          24/7
-          <p>fezfezfz</p>
+          <p class="stats-title">24/7</p>
+          <p class="stats-description">Correct / Incorrect <br/> pieces guessed</p>
         </div>
         <div class="col-sm-4">
-          60%
-          <p>fezfezfz</p>
+          <p class="stats-title">60%</p>
+          <p class="stats-description">Win ratio</p>
         </div>
       </div>
     </div>
 
     <div class="container-fuild footer-container m-0 p-0">
-      <div class="row m-0">
-        <div class="col-6 m-0">
-          <p class="m-0">© 2022 Hamza Dellam</p>
+      <div class="row m-0 ">
+        <div class="col-6">
+          <!-- <p>© {{new Date().getFullYear()}} Hamza Dellam</p> -->
         </div>
         <div class="col-6">
-          <p>something</p>
+          <!-- <p>something</p> -->
         </div>
       </div>
     </div>
