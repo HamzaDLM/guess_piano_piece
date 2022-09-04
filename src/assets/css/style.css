@@ -48,9 +48,24 @@
 }
 
 .footer-container {
+    font-size: 0.9rem;
     height: 5vh;
     background-color: #373737;
     color: #d9d9d9;
+}
+.footer-container .row {
+    padding-top: 10px;
+}
+.contact a {
+    margin-right:20px;
+}
+
+.contact a svg {
+    fill: white;
+}
+
+.contact a svg:hover {
+    fill: grey;
 }
 
 .title {
