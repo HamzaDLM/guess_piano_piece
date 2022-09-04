@@ -1,39 +1,6 @@
-<template>
-  <div>
-
-    <div class="container-fluid top-container bg-image m-0 p-0">
-      <h1 class="title">GUESS THE FOLLOWING CLASSICAL PIANO PIECE</h1>
-      <p class="description">Listen to the following 15 seconds and try to guess the name</p>
-      <button type="button" class="btn btn-primary">Play</button>
-
-      <div class="row m-4">
-        <div v-for="(data, index) in data" :key="index" class="col-sm-3">
-          <div class="card">
-            <button type="button" class="btn btn-primary">{{ data.piece }}<br/>{{ data.composer }}</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row m-4">
-        <div class="col-sm-4">
-          238
-        </div>
-        <div class="col-sm-4">
-          24/7
-        </div>
-        <div class="col-sm-4">
-          60%
-        </div>
-      </div>
-    </div>
-    <div class="container-fuild bot-container m-0 p-0">
-        <p>fefk</p>
-    </div>
-
-  </div>
-</template>
-
 <script>
+import PianoDB from '../backend/store'
+
 export default {
   name: 'HelloWorld',
   props: {
@@ -41,48 +8,119 @@ export default {
   },
   data() {
     return {
-      data: [
-        {
-          composer: 'Ludwig van Beethoven',
-          piece: 'Moonlight Sonata'
-        },
-        {
-          composer: 'Franz Liszt',
-          piece: 'Liebestraum No. 3'
-        },
-        {
-          composer: 'Frédéric Chopin',
-          piece: 'Prelude in Em'
-        },
-        {
-          composer: 'Ludwig van Beethoven',
-          piece: 'Für Elise'
-        }
-      ],
+      db: PianoDB,
       game_count: 0, // How many times user played
       win_count: 0,
       loss_count: 0,
-    }
-      
+      currentPiece: null,
+      playing: false,
+      answered: false,
+      answerStatus: null, // is the answer 'correct' or 'incorrect'
+      answerIndex: null,
+      isSelected: [],
+    } 
   },
+  created() {
+    Array.prototype.sample = function(){
+      return this[Math.floor(Math.random()*this.length)];
+    }
+    this.currentPiece = this.db.sample() 
+    console.log(this.currentPiece)
+  },
+  methods: {
+    togglePlay() {
+      let audio = this.$refs.audioPlayer
+      if (this.playing) {
+        audio.pause()
+        this.playing = false
+      } else {
+        audio.play()
+        this.playing = true
+      }
+    },
+    submitAnswer(params) {
+      if (this.answered == false) {
+        // Pause the audio
+        let audio = this.$refs.audioPlayer
+        audio.pause()
+        this.playing = false
+        // Logic
+        this.answered = true
+        this.isSelected.push(params.index)
+        if (params.data == this.currentPiece) {
+          this.answerStatus = 'correct'
+        } else {
+          this.answerStatus = 'incorrect'
+        }
+      }
+    },
+    next() {
+    },
+  }
 }
 </script>
 
+<template>
+  <div>
+
+    <div class="container-fluid top-container bg-image">
+      <h1 class="title">GUESS THE FOLLOWING CLASSICAL PIANO PIECE</h1>
+      <h5 class="description">Listen to the following 15 seconds and try to guess the name</h5>
+
+      <audio v-bind:src="`pieces/` + currentPiece.file_name" preload="auto" autoplay ref="audioPlayer"></audio>
+      <button v-if="!playing && !answered" type="button" class="btn btn-primary m-2 play-button" @click="togglePlay()">Play</button>
+      <button v-if="playing && !answered" type="button" class="btn btn-secondary m-2 play-button" @click="togglePlay()">Pause</button>
+      <button v-if="answered" type="button" class="btn btn-primary m-2 play-button" @click="next()">Next</button>
+
+      <div class="row m-4">
+        <div v-for="(data, index) in db" :key="index" class="col-sm-3">
+            <button 
+              type="button" 
+              class="btn option-button" 
+              :class="{
+                        'btn-dark': !isSelected.includes(index),
+                        'btn-success': isSelected.includes(index) && answerStatus == 'correct',
+                        'btn-danger': isSelected.includes(index) && answerStatus == 'incorrect'
+                      }" 
+              @click="submitAnswer({ index, data })"
+            >
+              {{ data.piece }}<br/>{{ data.composer }}
+            </button>
+        </div>
+      </div>
+
+    </div>
+    <div class="container-fuild bot-container m-0 p-0">
+      <div class="row m-0">
+        <div class="col-sm-4">
+          238
+          <p>fezfezfz</p>
+        </div>
+        <div class="col-sm-4">
+          24/7
+          <p>fezfezfz</p>
+        </div>
+        <div class="col-sm-4">
+          60%
+          <p>fezfezfz</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fuild footer-container m-0 p-0">
+      <div class="row m-0">
+        <div class="col-6 m-0">
+          <p class="m-0">© 2022 Hamza Dellam</p>
+        </div>
+        <div class="col-6">
+          <p>something</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</template>
+
 <style>
-    .top-container {
-      padding-top: 60px !important;
-      height: 60vh;
-      background-image: url(@/assets/vgogh.jpg)
-    }
-    .bot-container {
-      height: 40vh;
-      background-color: #181818;
-    }
-    .title {
-      font-family: montserrat bold;
-      color: white;
-    }
-    .description {
-      color: white;
-    }
+
 </style>

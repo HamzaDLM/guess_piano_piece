@@ -1,0 +1,56 @@
+:root {
+    --primary: #ffff00;
+    --font-Montserrat: "Montserrat";
+}
+
+#app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    font-family: var(--font-Montserrat), sans-serif;
+    color: white;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("../fonts/Montserrat-Regular.otf")
+}
+
+.play-button {
+    width: 15em;
+    height: 3em;
+}
+
+.option-button {
+    margin-top: 30%;
+    height: 100%;
+    width: 100%;
+}
+
+.top-container {
+    padding-top: 60px !important;
+    height: 60vh;
+    background-image: url(@/assets/vgogh.jpg);
+}
+
+.bot-container {
+    height: 35vh;
+    background-color: #181818;
+}
+
+.footer-container {
+    height: 5vh;
+    background-color: #373737;
+    color: #d9d9d9;
+}
+
+.title {
+    font-weight: bold;
+    padding-top: 5%;
+    color: white;
+}
+
+.description {
+    color: white;
+    padding-bottom: 2%
+}
