@@ -50,7 +50,6 @@ export default {
       this.fourPieces.push(...this.pickRandom(this.db, 3))
     },
     togglePlay() {
-      console.log('called')
       let audio = this.$refs.audioPlayer
       if (this.playing) {
         audio.pause()
@@ -59,7 +58,6 @@ export default {
         audio.play()
         this.playing = true
       }
-      return 'done'
     },
     submitAnswer(params) {
       if (this.answered == false) {
@@ -89,13 +87,7 @@ export default {
       this.isSelected = []
       this.answerStatus = null
       this.answered = false
-      this.prepGame().then(
-        (res) => {
-          console.log(res)
-          this.togglePlay()
-        }
-      )
-      
+      this.prepGame()
     }
   }
 }
@@ -113,8 +105,8 @@ export default {
       <button v-if="playing && !answered" type="button" class="btn btn-secondary m-2 play-button" @click="togglePlay()">Pause</button>
       <button v-if="answered" type="button" class="btn btn-warning m-2 play-button" @click="next()">Next</button>
 
-      <div class="row m-4">
-        <div v-for="(data, index) in fourPieces" :key="index" class="col-sm-3">
+      <div class="row m-sm-4">
+        <div v-for="(data, index) in fourPieces" :key="index" class="col-sm-3 options col-6">
             <button 
               type="button" 
               class="btn option-button" 
@@ -131,17 +123,17 @@ export default {
       </div>
 
     </div>
-    <div class="container-fliud bot-container m-0">
-      <div class="row m-0 ">
-        <div class="col-sm-4">
+    <div class="container-fluid bot-container stats m-0">
+      <div class="row">
+        <div class="col-sm-4 col-4">
           <p class="stats-title">{{game_count}}</p>
           <p class="stats-description">How many times you played <br/> this game</p>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 col-4">
           <p class="stats-title">{{win_count}}/{{game_count - win_count}}</p>
           <p class="stats-description">Correct / Incorrect <br/> pieces guessed</p>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 col-4">
           <p class="stats-title" :style="{color: perc2color(percentage)}">{{percentage}} %</p>
           <p class="stats-description">Win ratio</p>
         </div>
@@ -151,10 +143,10 @@ export default {
     <footer class="footer">
       <div class="container-fluid footer-container">
         <div class="row m-0">
-          <div class="col-sm-6 mt-1">
+          <div class="col-sm-6 col-8 mt-1">
             © {{new Date().getFullYear()}} Hamza Dellam
           </div>
-          <div class="col-sm-6 contact">
+          <div class="col-sm-6 col-4 contact">
             
             <a href="https://github.com/HamzaDLM" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 

@@ -16,6 +16,41 @@
     src: url("../fonts/Montserrat-Regular.otf")
 }
 
+/* TOP SECTION */ 
+.top-container {
+    padding-top: 60px !important;
+    height: 60vh;
+    background-image: url(@/assets/vgogh.jpg);
+}
+.title {
+    font-size: 3em;
+    font-weight: bold;
+    padding-top: 5%;
+    color: white;
+}
+.description {
+    color: white;
+    padding-bottom: 2%
+}
+.play-button {
+    width: 15em;
+    height: 3em;
+}
+
+/* BOTTOM SECTION */
+.bot-container {
+    padding: 9%;
+    height: 35vh;
+    background-color: #181818;
+}
+.option-button {
+    margin-top: 25%;
+    height: 60%;
+    width: 100%;
+}
+.stats {
+    padding-top: 7%;
+}
 .stats-title {
     font-size: 1.5em;
     font-weight: bold;
@@ -24,29 +59,7 @@
     font-size: 0.9em;
 }
 
-.play-button {
-    width: 15em;
-    height: 3em;
-}
-
-.option-button {
-    margin-top: 30%;
-    height: 100%;
-    width: 100%;
-}
-
-.top-container {
-    padding-top: 60px !important;
-    height: 60vh;
-    background-image: url(@/assets/vgogh.jpg);
-}
-
-.bot-container {
-    padding: 9%;
-    height: 35vh;
-    background-color: #181818;
-}
-
+/* FOOTER SECTION */
 .footer-container {
     font-size: 0.9rem;
     height: 5vh;
@@ -54,28 +67,168 @@
     color: #d9d9d9;
 }
 .footer-container .row {
-    padding-top: 10px;
+    padding-top: 5px;
 }
 .contact a {
     margin-right:20px;
 }
-
 .contact a svg {
     fill: white;
 }
-
 .contact a svg:hover {
     fill: grey;
 }
 
-.title {
-    font-size: 3em;
-    font-weight: bold;
-    padding-top: 5%;
-    color: white;
+@media (max-width: 1100px) {
+    /* TOP SECTION */
+    .top-container {
+        padding-top: 20px !important;
+        height: 60vh;
+        background-image: url(@/assets/vgogh.jpg);
+    }
+
+    .title {
+        font-size: 2.2em;
+        font-weight: bold;
+        padding-top: 12%;
+        color: white;
+    }
+    
+    .description {
+        color: white;
+        padding-bottom: 5%
+    }
+
+    .play-button {
+        width: 15em;
+        height: 3em;
+    }
+
+    /* BOTTOM SECTION */
+    .bot-container {
+        padding: 9%;
+        height: 35vh;
+        background-color: #181818;
+    }
+
+    .option-button {
+        font-size: 0.9em !important;
+        margin-top: 15%;
+        margin-right: 2%;
+        margin-left: 2%;
+        margin-bottom: 2%;
+        height: 100%;
+        width: 100%;
+    }
+
+    .stats-title {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .stats-description {
+        font-size: 0.9em;
+    }
+
+    /* FOOTER SECTION */
+    .footer-container {
+        font-size: 0.9rem;
+        height: 5vh;
+        background-color: #373737;
+        color: #d9d9d9;
+    }
+
+    .footer-container .row {
+        padding-top: 5px;
+    }
+
+    .contact a {
+        margin-right: 10px;
+    }
+
+    .contact a svg {
+        fill: white;
+    }
+
+    .contact a svg:hover {
+        fill: grey;
+    }
 }
 
-.description {
-    color: white;
-    padding-bottom: 2%
+@media (max-width: 590px) {
+
+    /* TOP SECTION */
+    .top-container {
+        padding-top: 20px !important;
+        height: 60vh;
+        background-image: url(@/assets/vgogh.jpg);
+    }
+
+    .title {
+        font-size: 1.7em;
+        font-weight: bold;
+        padding-top: 5%;
+        color: white;
+    }
+
+    .description {
+        color: white;
+        padding-bottom: 2%
+    }
+
+    .play-button {
+        width: 10em;
+        height: 2.5em;
+    }
+
+    /* BOTTOM SECTION */
+    .bot-container {
+        padding: 9%;
+        height: 35vh;
+        background-color: #181818;
+    }
+    .options {
+        margin-bottom: 1em;
+    }
+    .option-button {
+        font-size: 0.9em !important;
+        height: 100%;
+        width: 100%;
+    }
+
+    .stats {
+        padding-top: 5em;
+    }
+    .stats-title {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .stats-description {
+        font-size: 0.9em;
+    }
+
+    /* FOOTER SECTION */
+    .footer-container {
+        font-size: 0.9rem;
+        height: 5vh;
+        background-color: #373737;
+        color: #d9d9d9;
+    }
+
+    .footer-container .row {
+        padding-top: 5px;
+    }
+
+    .contact a {
+        margin-right: 10px;
+    }
+
+    .contact a svg {
+        fill: white;
+    }
+
+    .contact a svg:hover {
+        fill: grey;
+    }
 }
