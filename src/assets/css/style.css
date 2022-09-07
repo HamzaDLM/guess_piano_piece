@@ -1,6 +1,7 @@
 :root {
     --primary: #ffff00;
     --font-Montserrat: "Montserrat";
+    --bg-image: url(@/assets/vgogh.jpg)
 }
 
 #app {
@@ -9,6 +10,9 @@
     text-align: center;
     font-family: var(--font-Montserrat), sans-serif;
     color: white;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
 }
 
 @font-face {
@@ -16,109 +20,200 @@
     src: url("../fonts/Montserrat-Regular.otf")
 }
 
-/* TOP SECTION */ 
+
+.disclaimer {
+    background-color: #181818;
+    font-size: 0.6em;
+    padding: 5px;
+    width: 100%;
+    height: 5vh;
+}
+
 .top-container {
-    padding-top: 60px !important;
-    height: 60vh;
-    background-image: url(@/assets/vgogh.jpg);
+    padding-top: 11% !important;
+    height: 55vh;
+    background-image: var(--bg-image)
 }
+
 .title {
-    font-size: 3em;
+    font-size: 28px !important;
+    line-height: 29px !important;
+    font-family: 'Source Serif Pro', 'Noto Serif', serif !important;
     font-weight: bold;
-    padding-top: 5%;
     color: white;
+    margin-bottom: 1%;
 }
+
 .description {
+    font-size: 14px !important;
+    line-height: 22px !important;
     color: white;
-    padding-bottom: 2%
+    padding-top: 2%;
+    padding-right: 7%;
+    padding-left: 7%;
+
 }
+
 .play-button {
-    width: 15em;
+    font-family: Lato, "Noto Sans", sans-serif !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    font-weight: bold !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    width: 10em;
     height: 3em;
 }
 
-/* BOTTOM SECTION */
-.bot-container {
-    padding: 9%;
-    height: 35vh;
-    background-color: #181818;
-}
-.option-button {
-    margin-top: 25%;
-    height: 60%;
-    width: 100%;
-}
-.stats {
-    padding-top: 7%;
-}
-.stats-title {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-.stats-description {
-    font-size: 0.9em;
+.play {
+    margin-top: 5% !important;
 }
 
-/* FOOTER SECTION */
+.answers {
+    padding: 6%;
+    position: absolute;
+    margin-top: -35%;
+    height: 100px;
+    width: 100% !important;
+    align-items: stretch !important
+}
+
+.options {
+    margin-bottom: 2%;
+}
+
+.btn-normal {
+    background-color: #D9D9D9 !important;
+    color: #181818 !important;
+} 
+
+.option-button {
+    height: 100%;
+    width: 90%;
+    font-family: Lato, 'Noto Sans', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 26px !important;
+    letter-spacing: -0.1px !important;
+}
+
+.bot-container {
+    height: 60vh;
+    background-color: #181818;
+    padding: 65% 10% 10% 10% !important;
+}
+
+.stats-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.stats-description {
+    font-size: 0.8em;
+}
+
 .footer-container {
     font-size: 0.9rem;
     height: 5vh;
     background-color: #373737;
     color: #d9d9d9;
 }
+
 .footer-container .row {
+    font-family: inherit !important;
+    font-size: 12px !important;
+    line-height: 14px !important;
     padding-top: 5px;
 }
+
 .contact a {
-    margin-right:20px;
+    margin-right: 20px;
 }
+
 .contact a svg {
     fill: white;
 }
+
 .contact a svg:hover {
     fill: grey;
 }
 
-@media (max-width: 1100px) {
-    /* TOP SECTION */
+@media (min-width: 567px) {
+    .disclaimer {
+        background-color: #181818;
+        font-size: 0.8em;
+        padding: 5px;
+        width: 100%;
+        height: 5vh;
+    }
+
     .top-container {
-        padding-top: 20px !important;
-        height: 60vh;
-        background-image: url(@/assets/vgogh.jpg);
+        padding-top: 11% !important;
+        height: 55vh;
+        background-image: var(--bg-image)
     }
 
     .title {
-        font-size: 2.2em;
+        font-size: 30px !important;
+        line-height: 31px !important;
+        font-family: 'Source Serif Pro', 'Noto Serif', serif !important;
         font-weight: bold;
-        padding-top: 12%;
         color: white;
+        margin-bottom: 1%;
     }
-    
+
     .description {
+        font-size: 14px !important;
+        line-height: 22px !important;
         color: white;
-        padding-bottom: 5%
+        padding-top: 2%;
+        padding-right: 7%;
+        padding-left: 7%;
+
     }
 
     .play-button {
+        font-family: Lato, "Noto Sans", sans-serif !important;
+        font-size: 16px !important;
+        line-height: 20px !important;
+        font-weight: bold !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
         width: 15em;
         height: 3em;
     }
 
-    /* BOTTOM SECTION */
-    .bot-container {
-        padding: 9%;
-        height: 35vh;
-        background-color: #181818;
+    .play {
+        margin-top: 5% !important;
     }
 
-    .option-button {
-        font-size: 0.9em !important;
-        margin-top: 15%;
-        margin-right: 2%;
-        margin-left: 2%;
+    .answers {
+        padding: 6%;
+        position: absolute;
+        margin-top: -35%;
+        height: 100px;
+        width: 100% !important;
+        align-items: stretch !important
+    }
+    .options {
         margin-bottom: 2%;
-        height: 100%;
+    }
+    .option-button {
+        background-color: #D9D9D9 !important;
+        color: #181818 !important;
+        height: 110px;
         width: 100%;
+        font-family: Lato, 'Noto Sans', sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 26px !important;
+        letter-spacing: -0.1px !important;
+    }
+
+    .bot-container {
+        height: 35vh;
+        background-color: #181818;
+        padding: 20% 10% 10% 10% !important;
     }
 
     .stats-title {
@@ -129,76 +224,168 @@
     .stats-description {
         font-size: 0.9em;
     }
-
-    /* FOOTER SECTION */
-    .footer-container {
-        font-size: 0.9rem;
-        height: 5vh;
-        background-color: #373737;
-        color: #d9d9d9;
-    }
-
-    .footer-container .row {
-        padding-top: 5px;
-    }
-
-    .contact a {
-        margin-right: 10px;
-    }
-
-    .contact a svg {
-        fill: white;
-    }
-
-    .contact a svg:hover {
-        fill: grey;
-    }
 }
 
-@media (max-width: 590px) {
+@media (min-width: 768px) {
+    .disclaimer {
+        background-color: #181818;
+        font-size: 0.8em;
+        padding: 5px;
+        width: 100%;
+        height: 4vh;
+    }
 
-    /* TOP SECTION */
     .top-container {
-        padding-top: 20px !important;
-        height: 60vh;
-        background-image: url(@/assets/vgogh.jpg);
+        padding-top: 11% !important;
+        height: 56vh;
+        background-image: var(--bg-image)
     }
 
     .title {
-        font-size: 1.7em;
+        font-size: 30px !important;
+        line-height: 31px !important;
+        font-family: 'Source Serif Pro', 'Noto Serif', serif !important;
         font-weight: bold;
-        padding-top: 5%;
         color: white;
+        margin-bottom: 1%;
     }
 
     .description {
+        font-size: 18px !important;
+        line-height: 30px !important;
+        color: white;
+        padding-top: 2%;
+        padding-right: 7%;
+        padding-left: 7%;
+
+    }
+
+    .play-button {
+        font-family: Lato, "Noto Sans", sans-serif !important;
+        font-size: 16px !important;
+        line-height: 20px !important;
+        font-weight: bold !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        width: 15em;
+        height: 3em;
+    }
+
+    .play {
+        margin-top: 5% !important;
+    }
+
+    .answers {
+        padding-right: 4%;
+        padding-left: 4%;
+        position: absolute;
+        margin-top: -15%;
+        height: 100px;
+        width: 100% !important;
+        align-items: stretch !important
+    }
+
+    .option-button {
+        background-color: #D9D9D9 !important;
+        color: #181818 !important;
+        height: 130px;
+        width: 100%;
+        font-family: Lato, 'Noto Sans', sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 26px !important;
+        letter-spacing: -0.1px !important;
+    }
+
+    .bot-container {
+        height: 35vh;
+        background-color: #181818;
+        padding: 11% !important;
+    }
+
+    .stats-title {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .stats-description {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 992px) {
+    .disclaimer {
+        background-color: #181818;
+        font-size: 0.8em;
+        padding: 5px;
+        width: 100%;
+        height: 4vh;
+    }
+
+    .top-container {
+        padding-top: 9% !important;
+        height: 56vh;
+        background-image: var(--bg-image)
+    }
+
+    .title {
+        font-size: 53px !important;
+        line-height: 54px !important;
+        font-family: 'Source Serif Pro', 'Noto Serif', serif !important;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 1%;
+    }
+
+    .description {
+        font-size: 18px !important;
         color: white;
         padding-bottom: 2%
     }
 
     .play-button {
-        width: 10em;
-        height: 2.5em;
+        font-family: Lato, "Noto Sans", sans-serif !important;
+        font-size: 16px !important;
+        line-height: 20px !important;
+        font-weight: bold !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        width: 15em;
+        height: 3em;
     }
 
-    /* BOTTOM SECTION */
+    .play {
+        margin-top: 1% !important;
+    }
+
+    .answers {
+        padding-right: 5%;
+        padding-left: 5%;
+        position: absolute;
+        margin-top: -11%;
+        height: 100px;
+        width: 100% !important;
+        align-items: stretch !important
+    }
+
+    .option-button {
+        background-color: #D9D9D9 !important;
+        color: #181818 !important;
+        height: 130px;
+        width: 100%;
+        font-family: Lato, 'Noto Sans', sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 26px !important;
+        letter-spacing: -0.1px !important;
+    }
+
     .bot-container {
-        padding: 9%;
         height: 35vh;
         background-color: #181818;
-    }
-    .options {
-        margin-bottom: 1em;
-    }
-    .option-button {
-        font-size: 0.9em !important;
-        height: 100%;
-        width: 100%;
+        padding: 8% !important;
     }
 
-    .stats {
-        padding-top: 5em;
-    }
     .stats-title {
         font-size: 1.5em;
         font-weight: bold;
@@ -207,28 +394,85 @@
     .stats-description {
         font-size: 0.9em;
     }
+}
 
-    /* FOOTER SECTION */
-    .footer-container {
-        font-size: 0.9rem;
-        height: 5vh;
-        background-color: #373737;
-        color: #d9d9d9;
+@media (min-width: 1200px) {
+    .disclaimer {
+        background-color: #181818;
+        font-size: 0.8em;
+        padding: 5px;
+        width: 100%;
+        height: 4vh;
     }
 
-    .footer-container .row {
-        padding-top: 5px;
+    .top-container {
+        padding-top: 4% !important;
+        height: 56vh;
+        background-image: var(--bg-image)
     }
 
-    .contact a {
-        margin-right: 10px;
+    .title {
+        font-size: 53px !important;
+        line-height: 54px !important;
+        font-family: 'Source Serif Pro', 'Noto Serif',serif !important;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 20px;
     }
 
-    .contact a svg {
-        fill: white;
+    .description {
+        font-size: 18px !important;
+        color: white;
+        padding-bottom: 2%
     }
 
-    .contact a svg:hover {
-        fill: grey;
+    .play-button {
+        font-family: Lato, "Noto Sans", sans-serif !important;
+        font-size: 16px !important;
+        line-height: 20px !important;
+        font-weight: bold !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        width: 15em;
+        height: 3em;
+    }
+    .play {
+        margin-top: 1% !important;
+    }
+
+    .answers {
+        padding-right: 5%;
+        padding-left: 5%;
+        position: absolute; 
+        margin-top: -12%;
+        height: 100px;
+        width: 100% !important;
+        align-items: stretch !important
+    }
+    .option-button {
+        background-color: #D9D9D9 !important;
+        color: #181818 !important;
+        height: 130px;
+        width: 100%;
+        font-family: Lato, 'Noto Sans', sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 26px !important;
+        letter-spacing: -0.1px !important;
+    }
+    
+    .bot-container {
+        height: 35vh;
+        background-color: #181818;
+        padding: 7% !important;
+    }
+
+    .stats-title {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .stats-description {
+        font-size: 0.9em;
     }
 }
