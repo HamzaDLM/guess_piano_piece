@@ -61,7 +61,7 @@
     font-size: 14px !important;
     line-height: 22px !important;
     color: white;
-    padding-top: 2%;
+    padding-top: 0%;
     padding-right: 7%;
     padding-left: 7%;
 
@@ -189,7 +189,7 @@
         font-size: 14px !important;
         line-height: 22px !important;
         color: white;
-        padding-top: 2%;
+        padding-top: 0%;
         padding-right: 7%;
         padding-left: 7%;
 
@@ -293,7 +293,7 @@
         font-size: 18px !important;
         line-height: 30px !important;
         color: white;
-        padding-top: 2%;
+        padding-top: 0%;
         padding-right: 7%;
         padding-left: 7%;
 
@@ -486,7 +486,6 @@
         font-family: 'Source Serif Pro', 'Noto Serif',serif !important;
         font-weight: bold;
         color: white;
-        margin-bottom: 20px;
     }
 
     .description {

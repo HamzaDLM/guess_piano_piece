@@ -30,6 +30,7 @@ export default {
   },
   created() {
     this.prepGame()
+    console.log(this.db.length)
   },
   computed: {
     percentage() {
