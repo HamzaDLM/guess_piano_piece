@@ -96,14 +96,14 @@ export default {
 <template>
   <div>
     <div class="disclaimer" >
-      <b>Disclaimer:</b> I do not own the recordings played in this game, if you own one and wish to have it removed, <span style="color:blue">contact me!</span>
     </div>
     <div class="top-container bg-image">
       <h1 class="title">Guess the following classical piano piece</h1>
       <h5 class="description">Listen to the following classical piano piece and try to guess the answer out of the four given.</h5>
 
-      <div class="play">
-        <audio v-bind:src="`pieces/` + currentPiece.file_name" preload="auto" ref="audioPlayer"></audio>
+      <div class="play text-center">
+        <!-- <audio :src="`pieces/` + currentPiece.file_name" preload="auto" ref="audioPlayer"></audio> -->
+        <audio src="http://www.piano-midi.de/mp3/beethoven/beethoven_opus10_1.mp3" preload="auto" ref="audioPlayer"></audio>
         <button v-if="!playing && !answered" type="button" class="btn btn-primary m-2 play-button" @click="togglePlay()">Play</button>
         <button v-if="playing && !answered" type="button" class="btn btn-secondary m-2 play-button" @click="togglePlay()">Pause</button>
         <button v-if="answered" type="button" class="btn btn-warning m-2 play-button" @click="next()">Next</button>
@@ -152,7 +152,7 @@ export default {
       <div class="footer-container">
         <div class="row m-0">
           <div class="col-sm-6 col-8 mt-1">
-            © {{new Date().getFullYear()}} Hamza Dellam
+            © {{new Date().getFullYear()}} Hamza Dellam | Credits
           </div>
           <div class="col-sm-6 col-4 contact">
             
