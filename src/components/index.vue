@@ -106,7 +106,6 @@ export default {
 
       <div class="play text-center">
         <audio :src="`tracks/` + currentPiece.link" preload="auto" ref="audioPlayer"></audio>
-        <!-- <audio :src="currentPiece.link" preload="auto" ref="audioPlayer"></audio> -->
         <button v-if="!playing && !answered" type="button" class="btn btn-primary m-2 play-button" @click="togglePlay()">Play</button>
         <button v-if="playing && !answered" type="button" class="btn btn-secondary m-2 play-button" @click="togglePlay()">Pause</button>
         <button v-if="answered" type="button" class="btn btn-warning m-2 play-button" @click="next()">Next</button>
