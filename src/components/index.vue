@@ -152,7 +152,10 @@ export default {
       <div class="footer-container">
         <div class="row m-0">
           <div class="col-sm-6 col-8 mt-1">
-            © {{new Date().getFullYear()}} Hamza Dellam | Credits
+            © {{new Date().getFullYear()}} Hamza Dellam | 
+            <span><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#creditsModal">Credits</a></span>
+            | <span><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#contactmeModal">Contact me</a></span>
+
           </div>
           <div class="col-sm-6 col-4 contact">
             
@@ -175,6 +178,40 @@ export default {
         </div>
       </div>
     </footer>
+
+    <div class="modal " id="creditsModal" tabindex="-1">
+      <div class="modal-dialog text-start modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Credits</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>The audio (MP3, OGG) files used in this website are of <mark>Bernd Krueger</mark> and are licensed under the <span><a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.en">cc-by-sa Germany License</a></span>.</p>
+            <p>Source: <span><a href="http://www.piano-midi.de">http://www.piano-midi.de</a></span></p>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal " id="contactmeModal" tabindex="-1">
+      <div class="modal-dialog text-start modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Contact me</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>You can contact me via the following email:</p>
+            <p>Source: <span><a href="http://www.piano-midi.de">hamzadellam@hotmail.com</a></span></p>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </template>

@@ -20,6 +20,19 @@
     src: url("../fonts/Montserrat-Regular.otf")
 }
 
+.modal-dialog {
+    align-items: left;
+}
+.modal-content {
+    background-color: #181818 !important;
+    color: white !important;
+}
+.modal-header {
+    border-bottom: #181818 !important
+}
+.modal-footer {
+    border-top: #181818 !important
+}
 
 .disclaimer {
     background-color: #181818;
