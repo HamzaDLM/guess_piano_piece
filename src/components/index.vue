@@ -105,8 +105,8 @@ export default {
       <h5 class="description">Listen to the following classical piano piece and try to guess the answer out of the four given.</h5>
 
       <div class="play text-center">
-        <!-- <audio :src="`pieces/` + currentPiece.file_name" preload="auto" ref="audioPlayer"></audio> -->
-        <audio :src="currentPiece.link" preload="auto" ref="audioPlayer"></audio>
+        <audio :src="`tracks/` + currentPiece.link" preload="auto" ref="audioPlayer"></audio>
+        <!-- <audio :src="currentPiece.link" preload="auto" ref="audioPlayer"></audio> -->
         <button v-if="!playing && !answered" type="button" class="btn btn-primary m-2 play-button" @click="togglePlay()">Play</button>
         <button v-if="playing && !answered" type="button" class="btn btn-secondary m-2 play-button" @click="togglePlay()">Pause</button>
         <button v-if="answered" type="button" class="btn btn-warning m-2 play-button" @click="next()">Next</button>
