@@ -9,15 +9,14 @@
 </p>
 
 <p align="center">
-  <a href="https://hamzadlm.github.io/hdlm_portfolio/"><strong>https://hamzadlm.github.io/hdlm_portfolio/</strong></a>
+  <a href="https://hamzadlm.github.io/guess_piano_piece/"><strong>https://hamzadlm.github.io/guess_piano_piece/</strong></a>
   <br>
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/github/workflow/status/HamzaDLM/hdlm_portfolio/pages%20build%20and%20deployment" alt="Build Status">
+<img src="https://img.shields.io/github/workflow/status/HamzaDLM/guess_piano_piece/pages%20build%20and%20deployment" alt="Build Status">
 </img>
-<img src="https://img.shields.io/github/package-json/dependency-version/HamzaDLM/hdlm_portfolio/vue"></img>
-<img src="https://img.shields.io/github/package-json/dependency-version/HamzaDLM/hdlm_portfolio/bootstrap"></img>
+
 </p>
 
 <hr>
@@ -47,9 +46,12 @@ npm run lint
 ```
 ## Motivation
 Aspiring to become a decent classical pianist, I created this website to help me test my knowledge in recognizing famous classical piano pieces in a fun way.
+## Info
+To avoid getting the answer through looking at the audio file name through the developer console, the file's names have been hashed using sha1 (10 characters used). The files still belong to the original owner Bernd Krueger.
 ## Want to Help?
-Being mostly a backend developer, I would love to hear your opinion and critics about the website, especially UI/UX wise. 
+Being mostly a backend developer, I would love to hear your opinion and critics about the website, especially UI/UX wise. If you have enhancements to propose, feel free to make a pull request!
 ## Disclaimer
-I do not own the recordings played in this website, if you are the owner and you wish to have them removed, please contact me and I will do so as soon as possible.
+The audio (MP3, OGG) files used in this website are of Bernd Krueger and are licensed under the cc-by-sa Germany License.
+Source: http://www.piano-midi.de/copy.htm
 ## Credits
-This codebase is free to use for personal and commercial purposes, I only require that you credit me for it.
+This codebase is free to use for personal and commercial purposes, I only require that you credit me for it, and credit the recordings owner Bernd Krueger of http://www.piano-midi.de if you are planning on using them.
