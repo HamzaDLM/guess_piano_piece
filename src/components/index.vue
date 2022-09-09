@@ -205,7 +205,7 @@ export default {
           </div>
           <div class="modal-body">
             <p>You can contact me via the following email:</p>
-            <p>Source: <span><a href="http://www.piano-midi.de">hamzadellam@hotmail.com</a></span></p>
+            <span><a href="mailto:hamzadellam@hotmail.com">hamzadellam@hotmail.com</a></span>
           </div>
           <div class="modal-footer">
           </div>
