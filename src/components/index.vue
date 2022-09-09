@@ -1,5 +1,5 @@
 <script>
-import PianoDB from '../backend/store'
+import PianoDB from '../backend/store-v2'
 import utils from '../backend/utils'
 
 export default {
@@ -21,12 +21,12 @@ export default {
     } 
   },
   mounted() {
-    if (localStorage.game_count) {
-      this.game_count = localStorage.game_count
-    }
-    if (localStorage.win_count) {
-      this.win_count = localStorage.win_count
-    }
+  //   if (localStorage.game_count) {
+  //     this.game_count = localStorage.game_count
+  //   }
+  //   if (localStorage.win_count) {
+  //     this.win_count = localStorage.win_count
+  //   }
   },
   created() {
     this.prepGame()
@@ -48,6 +48,8 @@ export default {
       this.db.splice(randIndex, 1)
       // get 3 false answers
       this.fourPieces.push(...this.pickRandom(this.db, 3))
+      // Shuffle the four pieces so we don't get same answer position for buttons
+      this.shuffle(this.fourPieces)
     },
     togglePlay() {
       let audio = this.$refs.audioPlayer
@@ -103,7 +105,7 @@ export default {
 
       <div class="play text-center">
         <!-- <audio :src="`pieces/` + currentPiece.file_name" preload="auto" ref="audioPlayer"></audio> -->
-        <audio src="http://www.piano-midi.de/mp3/beethoven/beethoven_opus10_1.mp3" preload="auto" ref="audioPlayer"></audio>
+        <audio :src="currentPiece.link" preload="auto" ref="audioPlayer"></audio>
         <button v-if="!playing && !answered" type="button" class="btn btn-primary m-2 play-button" @click="togglePlay()">Play</button>
         <button v-if="playing && !answered" type="button" class="btn btn-secondary m-2 play-button" @click="togglePlay()">Pause</button>
         <button v-if="answered" type="button" class="btn btn-warning m-2 play-button" @click="next()">Next</button>
