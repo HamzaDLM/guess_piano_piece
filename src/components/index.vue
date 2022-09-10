@@ -123,7 +123,8 @@ export default {
           :class="{
             'btn-normal': !isSelected.includes(index),
             'btn-success': isSelected.includes(index) && answerStatus == 'correct',
-            'btn-danger': isSelected.includes(index) && answerStatus == 'incorrect'
+            'btn-danger': isSelected.includes(index) && answerStatus == 'incorrect',
+            'btn-wrong': answerStatus == 'incorrect' && data == currentPiece 
           }" 
             @click="submitAnswer({ index, data })"
             >

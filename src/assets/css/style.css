@@ -238,8 +238,6 @@
         color: white !important;
     }
     .option-button {
-        background-color: #D9D9D9 !important;
-        color: #181818 !important;
         height: 110px;
         width: 100%;
         font-family: Lato, 'Noto Sans', sans-serif !important;
@@ -340,8 +338,6 @@
         color: white !important;
     }
     .option-button {
-        background-color: #D9D9D9 !important;
-        color: #181818 !important;
         height: 130px;
         width: 100%;
         font-family: Lato, 'Noto Sans', sans-serif !important;
@@ -438,8 +434,6 @@
         color: white !important;
     }
     .option-button {
-        background-color: #D9D9D9 !important;
-        color: #181818 !important;
         height: 130px;
         width: 100%;
         font-family: Lato, 'Noto Sans', sans-serif !important;
@@ -533,9 +527,11 @@
         background-color: red !important;
         color: white !important;
     }
+    .btn-wrong {
+        background-color: green !important;
+        color: white !important;
+    }
     .option-button {
-        /* background-color: #D9D9D9 !important; */
-        /* color: #181818 !important; */
         height: 130px;
         width: 100%;
         font-family: Lato, 'Noto Sans', sans-serif !important;
