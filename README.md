@@ -4,8 +4,14 @@
   <img src="public/favicon.ico" alt="angular-logo" width="50px" height="50px"/>
   <br>
   <i>Listen to the classical piano piece played and guess the name and the composer from four possible answers.
-    <br>Built using <span style="color:lightgreen">Vuejs</span>.</i>
-  <br>
+    <br>
+            Built using
+    ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+    ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+    ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+    ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) 
+  </i>
+<br>
 </p>
 
 <p align="center">
@@ -25,31 +31,31 @@
 ## Development Setup
 
 ### Clone the github repo
-```
+```bash
 git clone [url]
 ```
 ### Install dependency
-```
+```bash
 npm install
 ```
 ### Compiles and hot-reloads for development
-```
-npm run serve
+```bash
+npm run dev 
 ```
 ### Compiles and minifies for production
-```
+```bash
 npm run build
 ```
 ### Lints and fixes files
-```
+```bash
 npm run lint
 ```
-## Motivation
-Aspiring to become a decent classical pianist, I created this website to help me test my knowledge in recognizing famous classical piano pieces in a fun way.
-## Info
-To avoid getting the answer through looking at the audio file name through the developer console, the file's names have been hashed using sha1 (10 characters used). The files still belong to the original owner Bernd Krueger.
+## Deployment
+To deploy to Github pages:
+- Run `npm run build`
+- Push the built dist folder to **gh-pages** branch
 ## Want to Help?
-Being mostly a backend developer, I would love to hear your opinion and critics about the website, especially UI/UX wise. If you have enhancements to propose, feel free to make a pull request!
+Have any contribution ideas ? feel free to make a pull request!
 ## Disclaimer
 The audio (MP3, OGG) files used in this website are of Bernd Krueger and are licensed under the cc-by-sa Germany License.
 Source: http://www.piano-midi.de/copy.htm
