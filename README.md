@@ -3,7 +3,7 @@
 <p align="center">
   <img src="public/favicon.ico" alt="angular-logo" width="50px" height="50px"/>
   <br>
-  <i>Listen to the classical piano piece played and guess the name and the composer from four possible answers.
+  <i markdown="1" >Listen to the classical piano piece played and guess the name and the composer from four possible answers.
     <br>
             Built using
     ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
