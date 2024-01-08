@@ -65,6 +65,7 @@ function drawConfetti(): void {
 	});
 
 	if (continueDraw) {
+		// @ts-ignore
 		window.requestAnimationFrame(drawConfetti.bind(this));
 	}
 }
