@@ -23,16 +23,16 @@ export let data: ReactiveData = {
 	answerSelectedIndex: null,
 }
 
-export const btnAnswerStyle = "text-lg text-zinc-300 font-medium rounded-lg border h-44 px-4 py-2 transition duration-300 hover:shadow-xl hover:shadow-zinc-900"
+export const btnAnswerStyle = "text-sm lg:text-lg text-zinc-300 font-medium rounded-lg border h-33 lg:h-44 px-4 py-2 transition duration-300 hover:shadow-xl hover:shadow-zinc-900"
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <div class="h-screen w-screen flex flex-col bg-gradient-to-bl from-zinc-950 to-zinc-800 z-50">
 	<!-- Header section -->
 	<div class="flex justify-center flex-col text-center items-center z-50">
-		<h1 class="pt-32 text-7xl text-zinc-200 font-bold">
+		<h1 class="px-10 pt-14 lg:pt-32 text-4xl lg:text-7xl text-zinc-200 font-bold">
 			Guess the following classical piano piece</h1>
-		<h2 class="mt-4 text-3xl text-zinc-400 px-20">Listen to the following classical piano piece and try to guess the answer out of the four given.</h2>
-		<button id="play" class="relative flex items-center bg-gradient-to-r from-blue-500 to-zinc-800 mt-16 text-4xl shadow-lg shadow-blue-900 hover:opacity-80 focus:outline-none focus:ring focus:border-blue-700 active:bg-blue-800 text-white font-bold py-2 px-12 rounded-full transition duration-300">
+		<h2 class="mt-4 text-lg lg:text-3xl text-zinc-400 px-5 lg:px-20">Listen to the following classical piano piece and try to guess the answer out of the four given.</h2>
+		<button id="play" class="relative flex items-center bg-gradient-to-r from-blue-500 to-zinc-800 mt-9 lg:mt-16 text-xl lg:text-4xl shadow-lg shadow-blue-900 hover:opacity-80 focus:outline-none focus:ring focus:border-blue-700 active:bg-blue-800 text-white font-bold py-2 px-10 lg:px-12 rounded-full transition duration-300">
 			<div class="absolute -inset-5">
 				<div class="w-full h-full animate-pulse rounded-full max-w-sm mx-auto lg:mx-0 opacity-30 blur-lg bg-gradient-to-r from-blue-700 to-blue-800"></div>
 			</div>
@@ -46,54 +46,45 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 	</audio>
 
 	<!-- Answer buttons -->
-	<div class="mx-32 mt-20 grid text-white text-center grid-cols-2 xl:grid-cols-4 gap-8 my-7 z-50">
+	<div class="mx-4 lg:mx-32 mt-9 lg:mt-20 grid text-white text-center grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-8 my-7 z-50">
 		<button id="answer-0" class="${btnAnswerStyle} border-zinc-600 bg-zinc-200/5 hover:bg-zinc-200/10" type="button">
-		<span class="text-xl  text-white">Composer</span> 
+		<span class="text-sm lg:text-xl text-white">Composer</span> 
 		</button>
 		<button id="answer-1" class="${btnAnswerStyle} border-zinc-600 bg-zinc-200/5 hover:bg-zinc-200/10" type="button">
-		<span class="text-xl text-white">Composer</span>
+		<span class="text-sm lg:text-xl text-white">Composer</span>
 		</button>
 		<button id="answer-2" class="${btnAnswerStyle} border-zinc-600 bg-zinc-200/5 hover:bg-zinc-200/10" type="button">
-		<span class="text-xl text-white">Composer</span>
+		<span class="text-sm lg:text-xl text-white">Composer</span>
 		</button>
 		<button id="answer-3" class="${btnAnswerStyle} border-zinc-600 bg-zinc-200/5 hover:bg-zinc-200/10" type="button">
-		<span class="text-xl text-white">Composer</span>
+		<span class="text-sm lg:text-xl text-white">Composer</span>
 		</button>
 	</div>
 
 	<!-- Game stats -->
-	<div id="stats" class="mt-10 flex justify-center gap-36 text-4xl text-white px-52 z-50">
+	<div id="stats" class="mt-2 lg:mt-10 flex justify-center gap-6 lg:gap-36 text-4xl text-white px-5 lg:px-52 z-50">
 		<div class="border-l-4 border-zinc-200/20 pl-7">
-			<p class="text-5xl font-bold text-zinc-500/20">Played</p>
-			<p id="played" class="text-5xl font-bold text-zinc-200/20">120</p>
+			<p class="text-base lg:text-5xl font-bold text-zinc-500/20">Played</p>
+			<p id="played" class="text-base lg:text-5xl font-bold text-zinc-200/20">120</p>
 		</div>	
 		<div class="border-l-4 border-green-300/20 pl-7">
-			<p class="text-5xl font-bold text-zinc-500/20">Correct</p>
-			<p id="correct" class="text-5xl font-bold text-green-300/20">99</p>
+			<p class="text-base lg:text-5xl font-bold text-zinc-500/20">Correct</p>
+			<p id="correct" class="text-base lg:text-5xl font-bold text-green-300/20">99</p>
 		</div>	
 		<div class="border-l-4 border-red-300/20 pl-7">
-			<p class="text-5xl font-bold text-zinc-500/20">Incorrect</p>
-			<p id="incorrect" class="text-5xl font-bold text-red-300/20">31</p>
+			<p class="text-base lg:text-5xl font-bold text-zinc-500/20">Incorrect</p>
+			<p id="incorrect" class="text-base lg:text-5xl font-bold text-red-300/20">31</p>
 		</div>	
 	</div>
    
 	<!-- Bottom section -->
-	<div class="px-52 flex justify-between mb-10 mt-auto text-xl text-zinc-600 z-50">
+	<div class="px-5 lg:px-52 flex justify-between mb-20 mt-auto text-xs lg:text-xl text-zinc-600 z-50">
    		<div class="flex gap-6 items-center">
-			<!-- <button class="flex hover:text-zinc-500 gap-2 tracking-wider items-center"> -->
-			<!-- 	<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="currentColor" d="M8 12h8v-2H8zm0-4h8V6H8zm11.95 12.475L15.9 15.2q-.425-.575-1.05-.887T13.5 14H4V4q0-.825.588-1.412T6 2h12q.825 0 1.413.588T20 4v16q0 .125-.012.238t-.038.237M6 22q-.825 0-1.412-.587T4 20v-4h9.5q.25 0 .463.113t.362.312l4.2 5.5q-.125.05-.262.063T18 22z"/></svg> -->
-			<!-- 	Credits	 -->
-			<!-- </button> -->
-   <!-- 			<button class="flex hover:text-zinc-500 gap-2 tracking-wider items-center"> -->
-			<!-- 	<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="currentColor" d="M21 3h-3V1h-2v2H8V1H6v2H3v18h18zm-9 3c1.66 0 3 1.34 3 3s-1.34 3-3 3s-3-1.34-3-3s1.34-3 3-3m6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1z"/></svg> -->
-			<!-- 	Contact	 -->
-			<!-- </button> -->
 		</div>
 
    		<div class="flex gap-6 items-center">
    			<button id="resetstats" class="flex hover:text-zinc-500 gap-2 tracking-wider items-center">
 				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="currentColor" d="M6.78 2.72a.75.75 0 0 1 0 1.06L4.56 6h8.69a7.75 7.75 0 1 1-7.75 7.75a.75.75 0 0 1 1.5 0a6.25 6.25 0 1 0 6.25-6.25H4.56l2.22 2.22a.75.75 0 1 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.5a.75.75 0 0 1 1.06 0"/></svg>
-				<!-- <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="currentColor" d="M21 3h-3V1h-2v2H8V1H6v2H3v18h18zm-9 3c1.66 0 3 1.34 3 3s-1.34 3-3 3s-3-1.34-3-3s1.34-3 3-3m6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1z"/></svg> -->
 				Reset Stats
 			</button>
 		</div>

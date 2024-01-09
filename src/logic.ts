@@ -130,7 +130,7 @@ function prepGame(): void {
 		// populate button text
 		let button = getElement('#answer-' + i)
 		let piece = data.fourPieces[i]
-		button.innerHTML = `<p>${piece.piece}<p class="mt-2 text-xl font-semibold pt-2 border-t border-zinc-800 tracking-wider text-zinc-400/80">${piece.composer}</p></p>`
+		button.innerHTML = `<p>${piece.piece}<p class="mt-2 text-sm lg:text-xl font-semibold pt-2 border-t border-zinc-800 tracking-wider text-zinc-400/80">${piece.composer}</p></p>`
 		// handle click 
 		button.addEventListener('click', () => submitAnswer(i))
 	}
